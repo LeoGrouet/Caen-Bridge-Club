@@ -1,0 +1,250 @@
+html {
+  font-family: "Bebas Neue", cursive;
+  color: var(--main-color-dark3);
+
+  --main-color-soft1: #fcfbf8;
+  --main-color-soft2: #f5f0e2;
+  --main-color-soft3: #f5f0e2;
+  --main-color: #e5d9b6;
+  --main-color-dark1: #a0987f;
+  --main-color-dark2: #5c5749;
+  --main-color-dark3: #171612;
+  --second-color-soft1: #eaeeea;
+  --second-color-soft2: #a9bbac;
+  --second-color-soft3: #69876e;
+  --second-color: #285430;
+  --second-color-dark1: #1c3b22;
+  --second-color-dark2: #102213;
+  --second-color-dark3: #040805;
+}
+
+body {
+  background-color: var(--main-color-soft1);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  height: 5vh;
+  text-align: center;
+  margin: 3vh 7vh;
+}
+
+.header_admin {
+  align-self: center;
+}
+
+.header_logo {
+  display: flex;
+  justify-content: flex-start;
+  width: 20vw;
+}
+
+.header_logo_img {
+  align-self: center;
+  height: 6vh;
+}
+
+.header_logo_title {
+  align-self: center;
+  font-size: xx-large;
+}
+
+.header_navbar {
+  align-self: center;
+}
+
+.header_navbar_menu {
+  list-style: url("../img/PhClubFill.svg");
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header_navbar_menu li {
+  align-self: center;
+  margin: 15px;
+}
+
+main {
+  background-color: var(--second-color-soft3);
+  display: flex;
+  flex-direction: column;
+  overflow: overlay;
+}
+
+.main-div {
+  display: flex;
+  font-size: 50px;
+  height: 55vh;
+}
+
+.next-competition {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+.next-competition-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+}
+
+.main-div-image {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+.main-div-image img{
+  height: 100%;
+  width: 100%;
+}
+
+.second-div {
+  background-color: var(--second-color-dark1);
+  font-size: 50px;
+  height: 55vh;
+  overflow-x:hidden ;
+}
+
+.second-div-title{
+  padding: 20px;
+  color: var(--main-color-dark3);
+  height: 10%;
+}
+
+.second-div-title h2 {
+  position: absolute;
+}
+
+.second-div-members{
+  display: flex;
+}
+
+.second-div-member-card{
+  margin: 0vw 1vw;
+  text-align: left;
+}
+
+.second-div-member-card h3{
+  font-size: 30px;
+  color: var(--main-color);
+}
+
+.third-div{
+  height: 15vh;
+  display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.third-div-description{
+  display: flex;
+  flex-direction: row;
+}
+
+.third-div-description-text{
+  margin: 0px 10vh;
+}
+
+.third-div-description-text h2{
+  font-size: 30px;
+  color: var(--main-color);
+}
+
+.third-div-description-button button{
+  width: 17vw;
+}
+
+footer {
+  display: flex;
+  height: 40vh;
+  justify-content: space-between;
+}
+
+.licensed {
+  list-style: none;
+  margin: 3vh;
+  font-size: x-large;
+}
+
+iframe {
+  height: 100%;
+  width: 100%;
+}
+
+.licensed-people {
+  margin: 1vh;
+}
+
+.licensed-people-img {
+  height: 2vh;
+}
+
+.next-competition-button {
+  display: inline-block;
+  transition: all 0.2s ease-in;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  color: var(--main-color-dark3);
+  padding: 0.7em 1.7em;
+  font-size: 18px;
+  border-radius: 0.5em;
+  background: var(--main-color-soft2);
+  border: 1px solid #e8e8e8;
+}
+
+.next-competition-button:active {
+  color: var(--main-color-dark3);
+}
+
+.next-competition-button:before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) scaleY(1) scaleX(1.25);
+  top: 100%;
+  width: 140%;
+  height: 180%;
+  background-color: var(--second-color-dark1);
+  border-radius: 50%;
+  display: block;
+  transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+  z-index: -1;
+}
+
+.next-competition-button:after {
+  content: "";
+  position: absolute;
+  left: 55%;
+  transform: translateX(-50%) scaleY(1) scaleX(1.45);
+  top: 180%;
+  width: 160%;
+  height: 190%;
+  background-color: var(--second-color-dark1);
+  border-radius: 50%;
+  display: block;
+  transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+  z-index: -1;
+}
+
+.next-competition-button:hover {
+  color: #ffffff;
+  border: 1px solid var(--second-color-dark1);
+}
+
+.next-competition-button:hover:before {
+  top: -35%;
+  background-color: var(--second-color-dark1);
+  transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+
+.next-competition-button:hover:after {
+  top: -45%;
+  background-color: var(--second-color-dark1);
+  transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}

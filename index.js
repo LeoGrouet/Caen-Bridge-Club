@@ -1,9 +1,10 @@
-const express = require("express");
-const router = require("router");
+const express = require('express')
+const app = express()
+const port = 3000
 
-const app = express();
-app.use(express.json());
 
-app.listen(process.env.PORT, () => {
-    console.log(`Server Listening on ${process.env.HOST}:${process.env.PORT}`);
-  });
+app.use(express.static('client'));
+
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+})
