@@ -107,7 +107,7 @@ main {
   background-color: var(--second-color-dark1);
   font-size: 50px;
   height: 55vh;
-  overflow-x:hidden ;
+  overflow-x:scroll ;
 }
 
 .second-div-title{
@@ -125,12 +125,16 @@ main {
 }
 
 .second-div-member-card{
-  margin: 0vw 1vw;
+  padding: 0vw 1vw;
   text-align: left;
 }
 
 .second-div-member-card h3{
   font-size: 30px;
+  color: var(--main-color-dark3);
+}
+
+.second-div-member-card-role {
   color: var(--main-color);
 }
 
