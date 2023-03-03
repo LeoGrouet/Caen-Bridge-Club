@@ -19,61 +19,13 @@
           <h2>Nos membres</h2>
         </div>
         <div class="second-div-members">
+          <%for (const member of members){%>
           <div class="second-div-member-card">
           <img class="second-div-member-card-img" src="./img/test.jpg" alt="" />
-          <h3 class="second-div-member-card-name">Blandine DE PANTHOU</h3>
-          <h4 class="second-div-member-card-role">Présidente</h4>
+          <h3 class="second-div-member-card-name"><%=member.name%> <%=member.lastName%></h3>
+          <h4 class="second-div-member-card-role"><%=member.role%></h4>
           </div>
-          <div class="second-div-member-card">
-            <img class="second-div-member-card-img" src="./img/test.jpg" alt="" />
-            <h3 class="second-div-member-card-name">Françoise SUFFICE</h3>
-            <h4 class="second-div-member-card-role">Trésorière</h4>
-            </div>
-            <div class="second-div-member-card">
-              <img class="second-div-member-card-img" src="./img/test.jpg" alt="" />
-              <h3 class="second-div-member-card-name">Odile Foucher</h3>
-              <h4 class="second-div-member-card-role">Secrétaire</h4>
-              </div>
-              <div class="second-div-member-card">
-                <img class="second-div-member-card-img" src="./img/test.jpg" alt="" />
-                <h3 class="second-div-member-card-name">Alain BOSQUET</h3>
-                <h4 class="second-div-member-card-role">Membre du bureau</h4>
-                </div>
-                <div class="second-div-member-card">
-                  <img class="second-div-member-card-img" src="./img/test.jpg" alt="" />
-                  <h3 class="second-div-member-card-name">Didier JOUBERT</h3>
-                  <h4 class="second-div-member-card-role">Membre du bureau</h4>
-                  </div>
-                  <div class="second-div-member-card">
-                    <img class="second-div-member-card-img" src="./img/test.jpg" alt="" />
-                    <h3 class="second-div-member-card-name">Marie SCHAFFNER</h3>
-                    <h4 class="second-div-member-card-role">Membre du bureau</h4>
-                    </div>
-                    <div class="second-div-member-card">
-                      <img class="second-div-member-card-img" src="./img/test.jpg" alt="" />
-                      <h3 class="second-div-member-card-name">Dominique NOGRIX</h3>
-                      <h4 class="second-div-member-card-role">Membre du bureau</h4>
-                      </div>
-                      <div class="second-div-member-card">
-                        <img class="second-div-member-card-img" src="./img/test.jpg" alt="" />
-                        <h3 class="second-div-member-card-name">Claude DEMERCASTELLE</h3>
-                        <h4 class="second-div-member-card-role">Membre du bureau</h4>
-                        </div>
-                        <div class="second-div-member-card">
-                          <img class="second-div-member-card-img" src="./img/test.jpg" alt="" />
-                          <h3 class="second-div-member-card-name">Christian CAILLOUX</h3>
-                          <h4 class="second-div-member-card-role">Membre du bureau</h4>
-                          </div>
-                          <div class="second-div-member-card">
-                            <img class="second-div-member-card-img" src="./img/test.jpg" alt="" />
-                            <h3 class="second-div-member-card-name">Marc DESGRANGES</h3>
-                            <h4 class="second-div-member-card-role">Membre du bureau</h4>
-                            </div>
-                            <div class="second-div-member-card">
-                              <img class="second-div-member-card-img" src="./img/test.jpg" alt="" />
-                              <h3 class="second-div-member-card-name">Michèle MOLKO</h3>
-                              <h4 class="second-div-member-card-role">Membre du bureau</h4>
-                              </div>
+          <%}%>
         </div>
       </div>
       <div class="third-div">

@@ -1,0 +1,33 @@
+<%- include('./partials/header') %>
+
+<form method="POST" action="/members/add">
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name" required>
+  
+  <label for="lastName">Last Name:</label>
+  <input type="text" id="lastName" name="lastName" required>
+  
+  <label for="role">Role:</label>
+  <input type="text" id="role" name="role" required>
+  
+  <button type="submit">Add Member</button>
+</form>
+
+<form method="DELETE" action="/members/delete">
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name" required>
+  
+  <label for="lastName">Last Name:</label>
+  <input type="text" id="lastName" name="lastName" required>
+  
+  <label for="role">Role:</label>
+  <input type="text" id="role" name="role" required>
+  
+  <button type="submit">Delete Member</button>
+</form>
+
+
+
+    <%- include('./partials/footer') %>
+  </body>
+</html>

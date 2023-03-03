@@ -1,18 +1,22 @@
 require("dotenv").config();
-const express = require('express');
-const session = require('express-session');
-const router = require('./client/router')
-const port = 3000;
+const express = require("express");
+const { connectDB } = require("./serveur/services/database");
+const bodyParser = require("body-parser");
+const router = require("./serveur/routes/router");
+const port = process.env.PORT || 3000;
 
 const app = express();
 
-app.set('view engine', 'ejs');
-app.set('views','./client/views');
+app.set("view engine", "ejs");
+app.set("views", "./client/views");
 
-app.use(express.static('client/public'));
+connectDB().catch((err) => console.log(err));
+
+app.use(express.static("client/public"));
+app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(router);
 
-app.listen(process.env.PORT, () => {
+app.listen(port, () => {
   console.log(`Server Listening on ${process.env.HOST}:${process.env.PORT}`);
 });
