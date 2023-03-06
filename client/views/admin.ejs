@@ -10,24 +10,33 @@
   <label for="role">Role:</label>
   <input type="text" id="role" name="role" required>
   
-  <button type="submit">Add Member</button>
-</form>
-
-<form method="DELETE" action="/members/delete">
-  <label for="name">Name:</label>
-  <input type="text" id="name" name="name" required>
-  
-  <label for="lastName">Last Name:</label>
-  <input type="text" id="lastName" name="lastName" required>
-  
-  <label for="role">Role:</label>
-  <input type="text" id="role" name="role" required>
-  
-  <button type="submit">Delete Member</button>
+  <button type="submit">Ajouter un membre</button>
 </form>
 
 
+<form method="POST" action="/admin/add">
+  <label for="email">Email:</label>
+  <input type="text" id="email" name="email" required>
+  
+  <label for="password">Password:</label>
+  <input type="text" id="password" name="password" required>
+  
+  <button type="submit">Ajouter un administrateur</button>
+</form>
 
-    <%- include('./partials/footer') %>
+<%for (const member of members){%>
+<form action="/delete-member/<%=member._id%>" method="POST">
+  <div class="admin-members-delete-container">
+    <label for="member"><%=member.name%> <%=member.lastName%>:</label>
+  <button type="submit" name="_id" value="<%=member._id%>">Supprimer le membre</button>
+  </div>
+</form>
+  <%}%>
+
+
+  <!-- <label for="name">Nom du memb :</label>
+  <input type="text" id="memberId" name="memberId" required>
+   -->
+
   </body>
 </html>

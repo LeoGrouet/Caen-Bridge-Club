@@ -29,16 +29,14 @@ const memberControllers = {
   },
 
   deleteMember: async (req, res) => {
+    const memberId = req.body._id;
     try {
-      const member = await Members.findByNameAndDelete(req.params.name);
-      console.log("bite");
-      if (!member) {
-        return res.status(404).send({ error: "Member not found" });
-      }
+      await Members.findByIdAndDelete(memberId);
+      console.log("Member deleted successfully!");
       res.redirect("/admin"); // Redirige vers une page de liste de membres
-    } catch (error) {
-      console.error(error.message);
-      res.status(500).send({ error: "Server error" });
+    } catch (err) {
+      console.log(err);
+      res.status(500).send("Error deleting member");
     }
   },
 };
