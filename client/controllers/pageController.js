@@ -4,7 +4,7 @@ const pageController = {
   // méthode pour la page d'accueil
   homePage: async function (req, res) {
     const members = await memberControllers.findAllMembers();
-    res.render("index", {
+    res.render("home", {
       members: members,
     });
   },

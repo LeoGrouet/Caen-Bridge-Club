@@ -5,14 +5,18 @@ const memberControllers = require("../controllers/memberController");
 
 const router = express.Router();
 
+//Page de visite
 router.get("/", pageController.homePage);
 router.get("/schedule", pageController.schedule);
-
 router.get("/admin", pageController.admin);
 
+//Router Member Controlleurs
 router.post("/members/add", memberControllers.addMember);
+router.post("/delete-member/:_id", memberControllers.deleteMember);
+
+//Router Admin Controller
 router.post("/admin/add", adminControllers.addAdmin);
 
-router.post("/delete-member/:_id", memberControllers.deleteMember);
+//Router Compétition Controller
 
 module.exports = router;
