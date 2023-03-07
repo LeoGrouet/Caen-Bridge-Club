@@ -11,6 +11,9 @@
     "validator": "^13.9.0"
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "nodemon index.js"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.21"
   }
 }
