@@ -17,6 +17,19 @@ const adminControllers = {
     }
   },
 
+  findOneAdmin: async (req, res) => {
+    try {
+      const admin = await Admin.findOne(
+        {email: req.body.email},
+        {password: req.body.password}
+      );
+      return admin;
+    } catch (err) {
+      console.log(err);
+      res.status(500).send("Error retrieving Admin");
+    }
+  },
+
   deleteAdmin: async (req, res) => {
     console.log("bite");
     const memberName = req.params.name; // l'ID du membre à supprimer
