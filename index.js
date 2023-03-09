@@ -1,5 +1,6 @@
 require("dotenv").config();
 const express = require("express");
+const session = require("express-session")
 const { connectDB } = require("./serveur/services/database");
 const bodyParser = require("body-parser");
 const router = require("./serveur/routes/router");
@@ -14,6 +15,12 @@ connectDB().catch((err) => console.log(err));
 
 app.use(express.static("client/public"));
 app.use(bodyParser.urlencoded({ extended: false }));
+
+app.use(session({
+  secret: process.env.SECRET,
+  resave: false,
+  saveUninitialized: true,
+}));
 
 app.use(router);
 

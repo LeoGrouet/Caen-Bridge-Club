@@ -4,14 +4,14 @@
       <div class="main-div">
         <div class="next-competition">
           <div class="next-competition-div">
-            <h2 class="next-competition-title">Prochaine Tournoi de régularité</h2>
+            <h2 class="next-competition-title">Prochain Tournoi de régularité</h2>
             <span class="next-competition-date">le 17/02/2023</span>
             <span class="next-competition-hour">à 20h</span>
             <a href="/schedule" ><button class="next-competition-button">Voir le calendrier</button></a>
           </div>
         </div>
         <div class="main-div-image">
-          <img src="./img/test.jpg" alt="test" />
+          <img src="./img/devanture.jpeg" alt="test" />
         </div>
       </div>
       <div class="second-div">
@@ -38,6 +38,24 @@
               <a href="/#"><button class="next-competition-button">Adhérer au Club</button></a>
             </div>
           </div>
+      </div>
+      <div id="popupLogin" class="popup-login">
+        <div class="popup-login-title">Connexion Administrateur</div>
+        <div class="popup-login-form">
+          <form method="POST" action="/login">
+            <div>
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div>
+              <label for="password">Mot de passe:</label>
+              <input type="password" id="password" name="password" required>
+            </div>
+        </div>
+        <div class="popup-login-submit">
+          <button type="submit">Se connecter</button>
+          </form>
+        </div>
       </div>
     </main>
     <%- include('./partials/footer') %>

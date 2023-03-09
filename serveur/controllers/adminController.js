@@ -6,7 +6,6 @@ const adminControllers = {
       email: req.body.email,
       password: req.body.password,
     });
-    console.log(req.body.email), console.log(req.body.password);
     try {
       await newAdmin.save();
       console.log("New Admin added successfully!");
@@ -19,10 +18,13 @@ const adminControllers = {
 
   findOneAdmin: async (req, res) => {
     try {
-      const admin = await Admin.findOne(
-        {email: req.body.email},
-        {password: req.body.password}
-      );
+      console.log("prout")
+      const { email, password } = req.body;
+      console.log(req.body)
+      const admin = await Admin.findOne({ email, passwordHash: password });
+      if (!admin) {
+        return res.status(404).send("Admin not found");
+      }
       return admin;
     } catch (err) {
       console.log(err);

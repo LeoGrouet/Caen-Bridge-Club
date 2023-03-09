@@ -125,7 +125,7 @@ main {
 .second-div {
   background-color: var(--second-color-dark1);
   font-size: 50px;
-  height: 55vh;
+  height: 60vh;
   overflow-x:scroll ;
 }
 
@@ -312,4 +312,20 @@ a{
 .admin-members-delete-container{
   display: flex;
   flex-direction: row;
+}
+
+/* popup login */
+
+.popup-login{
+  background-color: var(--main-color-dark2);
+  position: absolute;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  left: 41%;
+  padding: 23px;
+  gap: 22px;
+  display: none;
+  border: solid;
+  width: 15vw;
 }
