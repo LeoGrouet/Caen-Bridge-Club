@@ -329,3 +329,10 @@ a{
   border: solid;
   width: 15vw;
 }
+
+.closeButton{
+  cursor: pointer;
+  position: absolute;
+  left: 1%;
+  top: 1%;
+}

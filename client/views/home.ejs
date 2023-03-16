@@ -1,7 +1,7 @@
 <%- include('./partials/header') %>
 
     <main>
-      <div class="main-div">
+      <div id="main-div" class="main-div">
         <div class="next-competition">
           <div class="next-competition-div">
             <h2 class="next-competition-title">Prochain Tournoi de régularité</h2>
@@ -14,7 +14,7 @@
           <img src="./img/devanture.jpeg" alt="test" />
         </div>
       </div>
-      <div class="second-div">
+      <div id="second-div" class="second-div">
         <div class="second-div-title">
           <h2>Nos membres</h2>
         </div>
@@ -28,7 +28,7 @@
           <%}%>
         </div>
       </div>
-      <div class="third-div">
+      <div id="third-div" class="third-div">
           <div class="third-div-description">
             <div class="third-div-description-text">
                 <h2>Profitez d'une equipe conviviale et passionnée</h2>
@@ -39,24 +39,7 @@
             </div>
           </div>
       </div>
-      <div id="popupLogin" class="popup-login">
-        <div class="popup-login-title">Connexion Administrateur</div>
-        <div class="popup-login-form">
-          <form method="POST" action="/login">
-            <div>
-              <label for="email">Email:</label>
-              <input type="email" id="email" name="email" required>
-            </div>
-            <div>
-              <label for="password">Mot de passe:</label>
-              <input type="password" id="password" name="password" required>
-            </div>
-        </div>
-        <div class="popup-login-submit">
-          <button type="submit">Se connecter</button>
-          </form>
-        </div>
-      </div>
+      <%- include('./partials/popupLogin') %>
     </main>
     <%- include('./partials/footer') %>
   </body>
