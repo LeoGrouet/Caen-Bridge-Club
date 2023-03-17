@@ -1,3 +1,7 @@
+
+const calendarControl = {
+
+  calendarRenderer() {
 // Récupération de l'élément du calendrier
 const calendar = document.getElementById("calendar");
 
@@ -28,7 +32,7 @@ function showCalendar(month, year) {
     "Novembre",
     "Décembre",
   ];
-  const dayNames = ["Lun", "Mar", "Mer", "Jeu", "Ven", "Sam", "Dim"];
+  const dayNames = ["L", "M", "Me", "J", "V", "S", "D"];
 
   // Calcul du nombre de jours dans le mois en cours
   const daysInMonth = new Date(year, month + 1, 0).getDate();
@@ -111,3 +115,7 @@ function showWeekday(date) {
   // Ajout du message à l'élément du calendrier
   calendar.insertAdjacentHTML("beforeend", weekdayHTML);
 }
+  }
+};
+
+calendarControl.calendarRenderer();

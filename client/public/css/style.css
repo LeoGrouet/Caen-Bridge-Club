@@ -336,3 +336,8 @@ a{
   left: 1%;
   top: 1%;
 }
+
+#calendar{
+  text-align: center;
+  gap: 5px;
+}
