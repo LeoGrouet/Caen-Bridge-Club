@@ -42,14 +42,14 @@ function showCalendar(month, year) {
 
   // Création de la structure de la table du calendrier
   let calendarHTML =
-    "<table><thead><tr><th colspan='7'>" +
+    "<table><thead><tr><th id='monthAndYear' colspan='7'>" +
     monthNames[month] +
     " " +
     year +
     "</th></tr>";
   calendarHTML += "<tr>";
   for (let i = 0; i < dayNames.length; i++) {
-    calendarHTML += "<th>" + dayNames[i] + "</th>";
+    calendarHTML += "<th class=''dayNames>" + dayNames[i] + "</th>";
   }
   calendarHTML += "</tr></thead><tbody>";
 
@@ -63,7 +63,7 @@ function showCalendar(month, year) {
       } else if (date > daysInMonth) {
         break;
       } else {
-        calendarHTML += "<td>" + date + "</td>";
+        calendarHTML += "<td class='day'>" + date + "</td>";
         date++;
       }
     }
@@ -115,7 +115,18 @@ function showWeekday(date) {
   // Ajout du message à l'élément du calendrier
   calendar.insertAdjacentHTML("beforeend", weekdayHTML);
 }
+  },
+
+  datePicker() {
+    const days = document.getElementsByClassName("day");
+    const monthAndYear = document.getElementById("monthAndYear");
+    for (const day of days){
+    day.addEventListener("click", ()=> {
+      console.log(day.innerText, monthAndYear.innerText)
+    })
   }
+}
 };
 
 calendarControl.calendarRenderer();
+calendarControl.datePicker();
