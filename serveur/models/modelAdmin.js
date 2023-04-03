@@ -9,6 +9,14 @@ const Admin = mongoose.model("Admin", {
     type: String,
     required: true,
   },
+  name: {
+    type: String,
+    required: true,
+  },
+  lastName: {
+    type: String,
+    required: true,
+  },
 });
 
 module.exports = Admin;

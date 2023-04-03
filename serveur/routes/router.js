@@ -2,21 +2,21 @@ const express = require("express");
 const pageController = require("../../client/controllers/pageController");
 const adminControllers = require("../controllers/adminController");
 const memberControllers = require("../controllers/memberController");
-const verificateAdmin = require("../../client/middleware/verifyAdmin");
+const verifyAdmin = require("../../client/middleware/verifyAdmin");
 
 const router = express.Router();
 
 //Page de visite
 router.get("/", pageController.homePage);
 router.get("/schedule", pageController.schedule);
-//router.get("/admin", verificateAdmin.adminVerification, pageController.admin);
+router.get("/admin", verifyAdmin.verif, pageController.admin);
 
 //Router Member Controlleurs
 router.post("/members/add", memberControllers.addMember);
 router.post("/delete-member/:_id", memberControllers.deleteMember);
 
 //Router Administrateur
-router.post("/login", verificateAdmin.verif, pageController.admin); // Connection
+router.post("/admin", verifyAdmin.verif, pageController.admin); // Connection
 
 //Router Admin Controller
 router.post("/admin/add", adminControllers.addAdmin);

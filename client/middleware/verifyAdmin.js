@@ -5,7 +5,7 @@ const memberControllers = require("../../serveur/controllers/memberController");
 const bcrypt = require("bcrypt");
 
 const verifyAdmin = {
-  verif: async (req, res) => {
+  verif: async (req, res, next) => {
     try {
       const { email, password } = req.body;
       const matchAccount = await Admin.findOne({
@@ -16,12 +16,9 @@ const verifyAdmin = {
         (password === matchAccount.password) &
         (email === matchAccount.email)
       ) {
-        const members = await memberControllers.findAllMembers();
-        res.render("admin", {
-          members: members,
-        });
+        next();
       } else {
-        console.log("ici");
+        console.log("Administrateur Refusé");
         res.status(200).redirect("/");
       }
     } catch (err) {
