@@ -341,3 +341,14 @@ a{
   text-align: center;
   gap: 5px;
 }
+
+.calendar-table{
+  width: 34vw;
+  height: 44vh;
+}
+
+.day-number{
+  cursor: grab;
+  display: flex;
+	justify-content: center;
+}

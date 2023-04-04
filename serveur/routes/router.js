@@ -20,6 +20,7 @@ router.post("/admin", verifyAdmin.verif, pageController.admin); // Connection
 
 //Router Admin Controller
 router.post("/admin/add", adminControllers.addAdmin);
+router.post("/delete-admin/:_id", adminControllers.deleteAdmin);
 
 //Router Compétition Controller
 

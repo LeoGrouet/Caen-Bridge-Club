@@ -17,10 +17,9 @@ const pageController = {
   admin: async function (req, res) {
     const members = await memberControllers.findAllMembers();
     const admins = await adminControllers.findAllAdmins();
-    console.log(admins);
     res.render("admin", {
       members: members,
-      // admins: admins,
+      admins: admins,
     });
   },
 };

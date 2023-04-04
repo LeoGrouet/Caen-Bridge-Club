@@ -43,7 +43,6 @@ const adminControllers = {
   },
 
   deleteAdmin: async (req, res) => {
-    console.log("bite");
     const memberName = req.params.name; // l'ID du membre à supprimer
     try {
       const deletedMember = await Members.findByIdAndRemove(memberName);
