@@ -9,7 +9,7 @@ const router = express.Router();
 //Page de visite
 router.get("/", pageController.homePage);
 router.get("/schedule", pageController.schedule);
-//router.get("/admin", verificateAdmin.adminVerification, pageController.admin);
+router.get("/admin", verifyAdmin.verif, pageController.admin);
 
 //Router Member Controlleurs
 router.post("/members/add", memberControllers.addMember);
@@ -20,6 +20,7 @@ router.post("/login", verifyAdmin.verif, pageController.admin); // Connection
 
 //Router Admin Controller
 router.post("/admin/add", adminControllers.addAdmin);
+router.post("/delete-admin/:_id", adminControllers.deleteAdmin);
 
 //Router Compétition Controller
 

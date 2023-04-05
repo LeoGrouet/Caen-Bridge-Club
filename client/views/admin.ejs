@@ -20,6 +20,12 @@
   
   <label for="password">Password:</label>
   <input type="text" id="password" name="password" required>
+
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name" required>
+
+  <label for="lastName">LastName:</label>
+  <input type="text" id="lastName" name="LastName" required>
   
   <button type="submit">Ajouter un administrateur</button>
 </form>
@@ -33,10 +39,15 @@
 </form>
   <%}%>
 
+  <%for (const admin of admins){%>
+    <form action="/delete-admin/<%=admin._id%>" method="POST">
+      <div class="admin-members-delete-container">
+        <label for="admin"><%=admin.email%>:</label>
+      <button type="submit" name="_id" value="<%=admin._id%>">Supprimer l'admin</button>
+      </div>
+    </form>
+      <%}%>
 
-  <!-- <label for="name">Nom du memb :</label>
-  <input type="text" id="memberId" name="memberId" required>
-   -->
 
   </body>
 </html>

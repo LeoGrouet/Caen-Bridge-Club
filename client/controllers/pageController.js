@@ -1,3 +1,4 @@
+const adminControllers = require("../../serveur/controllers/adminController");
 const memberControllers = require("../../serveur/controllers/memberController");
 
 const pageController = {
@@ -15,8 +16,10 @@ const pageController = {
 
   admin: async function (req, res) {
     const members = await memberControllers.findAllMembers();
+    const admins = await adminControllers.findAllAdmins();
     res.render("admin", {
-      members
+      members: members,
+      admins: admins,
     });
   },
 };

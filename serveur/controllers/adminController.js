@@ -19,7 +19,7 @@ const adminControllers = {
   findOneAdmin: async (req, res) => {
     try {
       const { email, password } = req.body;
-      console.log(req.body)
+      console.log(req.body);
       const admin = await Admin.findOne({ email, passwordHash: password });
       if (!admin) {
         return res.status(404).send("Admin not found");
@@ -28,6 +28,16 @@ const adminControllers = {
     } catch (err) {
       console.log(err);
       res.status(500).send("Error retrieving Admin");
+    }
+  },
+
+  findAllAdmins: async (req, res) => {
+    try {
+      const admins = await Admin.find({});
+      return admins;
+    } catch (err) {
+      console.log(err);
+      res.status(500).send("Error retrieving Admins");
     }
   },
 
