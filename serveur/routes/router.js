@@ -2,7 +2,7 @@ const express = require("express");
 const pageController = require("../../client/controllers/pageController");
 const adminControllers = require("../controllers/adminController");
 const memberControllers = require("../controllers/memberController");
-const verificateAdmin = require("../../client/middleware/verifyAdmin");
+const verifyAdmin = require("../../client/middleware/verifyAdmin");
 
 const router = express.Router();
 
@@ -16,7 +16,7 @@ router.post("/members/add", memberControllers.addMember);
 router.post("/delete-member/:_id", memberControllers.deleteMember);
 
 //Router Administrateur
-router.post("/login", verificateAdmin.verif, pageController.admin); // Connection
+router.post("/login", verifyAdmin.verif, pageController.admin); // Connection
 
 //Router Admin Controller
 router.post("/admin/add", adminControllers.addAdmin);

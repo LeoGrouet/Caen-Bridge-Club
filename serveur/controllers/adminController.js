@@ -18,7 +18,6 @@ const adminControllers = {
 
   findOneAdmin: async (req, res) => {
     try {
-      console.log("prout")
       const { email, password } = req.body;
       console.log(req.body)
       const admin = await Admin.findOne({ email, passwordHash: password });
@@ -33,7 +32,6 @@ const adminControllers = {
   },
 
   deleteAdmin: async (req, res) => {
-    console.log("bite");
     const memberName = req.params.name; // l'ID du membre à supprimer
     try {
       const deletedMember = await Members.findByIdAndRemove(memberName);

@@ -5,7 +5,7 @@ const pageController = {
   homePage: async function (req, res) {
     const members = await memberControllers.findAllMembers();
     res.render("home", {
-      members: members,
+      members
     });
   },
 
@@ -14,10 +14,9 @@ const pageController = {
   },
 
   admin: async function (req, res) {
-    console.log("Coucou");
     const members = await memberControllers.findAllMembers();
     res.render("admin", {
-      members: members,
+      members
     });
   },
 };
