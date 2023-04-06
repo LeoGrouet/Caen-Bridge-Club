@@ -6,12 +6,14 @@ const div3 = document.getElementById("third-div");
 const header = document.getElementById("header");
 const footer = document.getElementById("footer");
 const closeButton = document.getElementById("closeButton");
+const exterior = document.querySelector("body")
 const y = window.scrollY;
 
 const popupController = {
   open: adminPopup.addEventListener("click", () => {
     window.scroll(0, 0);
     popupLogin.style.display = "flex";
+    closeButton.style.color = "white"
     const elements = [div1, div2, div3, header, footer];
     elements.forEach((element) => {
       element.style.filter = "blur(5px)";
