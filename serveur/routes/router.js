@@ -9,14 +9,15 @@ const router = express.Router();
 //Page de visite
 router.get("/", pageController.homePage);
 router.get("/schedule", pageController.schedule);
-router.get("/admin", verifyAdmin.verif, pageController.admin);
+router.get("/admin", pageController.admin);
 
 //Router Member Controlleurs
 router.post("/members/add", memberControllers.addMember);
 router.post("/delete-member/:_id", memberControllers.deleteMember);
 
 //Router Administrateur
-router.post("/login", verifyAdmin.verif, pageController.admin); // Connection
+router.get("/login", pageController.loginPage);
+router.post("/loged", verifyAdmin.verif, pageController.admin); // Connection
 
 //Router Admin Controller
 router.post("/admin/add", adminControllers.addAdmin);

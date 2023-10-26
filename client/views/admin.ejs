@@ -1,53 +1,104 @@
 <%- include('./partials/header') %>
+<div class="admin-div-general">
 
-<form method="POST" action="/members/add">
-  <label for="name">Name:</label>
-  <input type="text" id="name" name="name" required>
+<div class="admin-div-member">
+  <div class="admin-div-spe admin-div-add-member">
+    <form method="POST" action="/members/add">
+      <label class="admin-div-label" for="name">Name:</label>
+      <input class="admin-div-input" type="text" id="name" name="name" required>
   
-  <label for="lastName">Last Name:</label>
-  <input type="text" id="lastName" name="lastName" required>
+      <label class="admin-div-label" for="lastName">Last Name:</label>
+      <input class="admin-div-input" type="text" id="lastName" name="lastName" required>
   
-  <label for="role">Role:</label>
-  <input type="text" id="role" name="role" required>
+      <label class="admin-div-label" for="role">Role:</label>
+      <input class="admin-div-input" type="text" id="role" name="role" required>
   
-  <button type="submit">Ajouter un membre</button>
-</form>
-
-
-<form method="POST" action="/admin/add">
-  <label for="email">Email:</label>
-  <input type="text" id="email" name="email" required>
-  
-  <label for="password">Password:</label>
-  <input type="text" id="password" name="password" required>
-
-  <label for="name">Name:</label>
-  <input type="text" id="name" name="name" required>
-
-  <label for="lastName">LastName:</label>
-  <input type="text" id="lastName" name="LastName" required>
-  
-  <button type="submit">Ajouter un administrateur</button>
-</form>
-
-<%for (const member of members){%>
-<form action="/delete-member/<%=member._id%>" method="POST">
-  <div class="admin-members-delete-container">
-    <label for="member"><%=member.name%> <%=member.lastName%>:</label>
-  <button type="submit" name="_id" value="<%=member._id%>">Supprimer le membre</button>
-  </div>
-</form>
-  <%}%>
-
-  <%for (const admin of admins){%>
-    <form action="/delete-admin/<%=admin._id%>" method="POST">
-      <div class="admin-members-delete-container">
-        <label for="admin"><%=admin.email%>:</label>
-      <button type="submit" name="_id" value="<%=admin._id%>">Supprimer l'admin</button>
-      </div>
+      <button class="button-admin" type="submit">
+        <span class="button-decor"></span>
+          <div class="button-content">
+            <div class="button__icon">
+              <svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" width="24">
+                <image x="0" y="0" width="50" height="50" href="/img/BxPlusCircle.svg" />
+              </svg>
+            </div>
+        <span class="button__text">Ajouter un membre</span>
+          </div>
+  </button>
     </form>
-      <%}%>
 
+  </div>
+
+  
+    <div class="admin-div-spe admin-div-supp-member">
+      <%for (const member of members){%>
+      <form action="/delete-member/<%=member._id%>" method="POST">
+        <div class="admin-members-delete-container">
+          <label class="admin-div-label" for="member"><%=member.name%> <%=member.lastName%>:</label>
+        <button class="button-admin" type="submit" name="_id" value="<%=member._id%>"> <span class="button-decor"></span>
+          <div class="button-content">
+            <div class="button__icon">
+              <svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" width="24">
+                <image x="0" y="0" width="50" height="50" href="/img/BxMinusCircle.svg" />
+            </svg>
+            </div>
+            <span class="button__text">Supprimer le membre</span>
+        </div></button>
+        </div>
+      </form>
+        <%}%>
+    </div>
+  
+</div>
+<div class="admin-div-admin">
+  <div class="admin-div-spe admin-div-add-admin">
+    <form method="POST" action="/admin/add">
+      <label class="admin-div-label" for="email">Email:</label>
+      <input class="admin-div-input" type="text" id="email" name="email" required>
+  
+      <label class="admin-div-label" for="password">Password:</label>
+      <input class="admin-div-input" type="text" id="password" name="password" required>
+  
+      <label class="admin-div-label" for="name">Name:</label>
+      <input class="admin-div-input" type="text" id="name" name="name" required>
+  
+      <label class="admin-div-label" for="lastName">LastName:</label>
+      <input class="admin-div-input" type="text" id="lastName" name="LastName" required>
+  
+      <button class="button-admin" type="submit"> <span class="button-decor"></span>
+        <div class="button-content">
+          <div class="button__icon">
+            <svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" width="24">
+              <image x="0" y="0" width="50" height="50" href="/img/BxPlusCircle.svg" />
+          </svg>
+          </div>
+          <span class="button__text">Ajouter un administrateur</span>
+      </div>
+    </button>
+    </form>
+  </div>
+
+
+    <div class="admin-div-spe admin-div-supp-admin">
+      <%for (const admin of admins){%>
+        <form action="/delete-admin/<%=admin._id%>" method="POST">
+          <div class="admin-members-delete-container">
+            <label class="admin-div-label" for="admin"><%=admin.email%>:</label>
+          <button class="button-admin" type="submit" name="_id" value="<%=admin._id%>"> <span class="button-decor"></span>
+            <div class="button-content">
+              <div class="button__icon">
+                <svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" width="24">
+                  <image x="0" y="0" width="50" height="50" href="/img/BxMinusCircle.svg" />
+              </svg>
+              </div>
+              <span class="button__text">Supprimer l'admin</span>
+          </div>
+        </button>
+          </div>
+        </form>
+          <%}%>
+    </div>
+  </div>
+</div>
 
   </body>
 </html>

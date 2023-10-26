@@ -93,9 +93,30 @@ main {
 }
 
 .main-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    font-size: 50px;
+    height: auto;
+    margin: 4vh;
+}
+
+.container-main-div-login{
   display: flex;
+  justify-content: center;
+  margin: 5%;
+  align-items: center;
+}
+
+.main-div-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   font-size: 50px;
-  height: 55vh;
+  height: 46vh;
+  margin: 4vh;
 }
 
 .next-competition {
@@ -314,70 +335,23 @@ a{
   flex-direction: row;
 }
 
-/* popup login 
-
-.popup-login{
-  background-color: var(--main-color-dark2);
-  position: absolute;
-  flex-direction: column;
-  left: 41%;
-  padding: 23px;
-  gap: 22px;
-  display: none;
-  border: solid;
-  width: 15vw;
-}
-
-.closeButton{
-  cursor: pointer;
-  position: absolute;
-  left: 1%;
-  top: 1%;
-}
-*/
 /* Form uiverse */
-.popup-login {
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  position: fixed;
-  width: 30%;
-  padding-left: 2em;
-  padding-right: 2em;
-  padding-bottom: 0.4em;
-  background-color: var(--main-color-soft1);
-  border-radius: 10px;
-  transition: .4s ease-in-out;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 9999;
-  height: 35%;
-}
 
-.popup-login:hover {
+.login:hover {
   transition: 0.2s ease-in-out;
   border: 1px solid var(--main-color-dark3);
   box-shadow: transparent 1px var(--second-color-dark3);
 }
 
-.popup-login-form{
-  width: 50%;
+.login-form {
+  margin: 3vh;
 }
 
-form{
-  width: 15vw;
-}
-
-.form-input{
-height : 6vh;
-border: 1px var(--second-color)
-}
-
-.form-input input{
-  height: 65%;
-  width: 100%;
+.loginpage-form{
+  display: flex;
+  flex-direction: column;
+  width: 62%;
+  gap: 4vh;
 }
 
 .form-input-password-forget{
@@ -388,12 +362,11 @@ border: 1px var(--second-color)
  font: caption;
 }
 
-.popup-login-title {
+.login-title {
   text-align: center;
   color: var(--main-color-dark3);
   font-size: 4vh;
-  padding: 15px 0px 25px 0px;
-  font: smaller;
+  padding: 2vh;
 }
 
 .closeButton{
@@ -418,32 +391,48 @@ border: 1px var(--second-color)
   color: #d3d3d3;
 }
 
-.popup-login-submit {
-  display: flex;
-  justify-content: center;
-  width: 45%;
-  flex-direction: row;
-  margin-top: 0.5em;
-  margin-bottom: 1.5em;
-}
-
 .admin-login-button {
-  padding: 0.5em;
-  padding-left: 1.1em;
-  padding-right: 1.1em;
-  border-radius: 5px;
-  margin-right: 0.5em;
+  border-radius: 20px;
   border: none;
   outline: none;
   transition: .4s ease-in-out;
   background-color: var(--second-color);
   color: white;
   font-size: 2vh;
+  width: 35vh;
+  height: 85%;
 }
 
 .admin-login-button:hover {
   background-color: var(--second-color-dark1);
   color: white;
+}
+
+.login-form-email{
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form-email-input, .login-form-password-input{
+  padding-left: 15px;
+}
+
+.loginpage-form input{
+  height: 4vh;
+  width: 100%;
+  background-color: var(--main-color-soft3);
+  border: unset;
+  border-radius: 20px;
+}
+
+.login-form-password{
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form-password-label, .login-form-email-label{
+  font-size: large;
+  padding-bottom: 8px;
 }
 
 /* Form uiverse fin*/
@@ -462,4 +451,90 @@ border: 1px var(--second-color)
   cursor: grab;
   display: flex;
 	justify-content: center;
+}
+
+fieldset{
+  display: flex;
+  flex-direction: column;
+  width: 55vh;
+  align-items: center;
+}
+
+.admin-div-general{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 4vh;
+}
+
+.admin-div-spe,.admin-div-member,.admin-div-supp, .admin-div-add, .admin-div-admin{
+  display: flex;
+}
+
+.admin-div-supp-member, .admin-div-supp-admin{
+  flex-direction: column;
+}
+
+/* button admin ui verse */
+
+.button-admin {
+  text-decoration: none;
+  line-height: 1;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 10px 10px 20px rgba(0,0,0,.05);
+  background-color: var(--main-color-soft1);
+  color: var(--main-color-dark3);
+  border: none;
+  cursor: pointer;
+  transition: ease .3s;
+}
+
+.button-decor {
+  position: absolute;
+  inset: 0;
+  background-color: var(--second-color-dark1);
+  transform: translateX(-100%);
+  transition: transform .3s;
+  z-index: 0;
+}
+
+.button-content {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  position: relative;
+  overflow: hidden;
+}
+
+.button__icon {
+  width: 48px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+}
+
+.button__text {
+  display: inline-block;
+  transition: color .2s;
+  padding: 2px 1.5rem 2px;
+  padding-left: .75rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 150px;
+}
+
+.button-admin:hover .button__text {
+  color: var(--main-color-soft1);
+}
+
+.button-admin:hover svg{
+  filter: invert(1);
+  transition: transform .3s;
+}
+
+.button-admin:hover .button-decor {
+  transform: translate(0);
 }

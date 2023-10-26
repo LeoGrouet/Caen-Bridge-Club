@@ -19,7 +19,7 @@ const verifyAdmin = {
         next();
       } else {
         console.log("Administrateur Refusé");
-        res.status(200).redirect("/");
+        res.status(200).send("Erreur de connexion");
       }
     } catch (err) {
       console.log(err);

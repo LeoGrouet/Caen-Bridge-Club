@@ -6,12 +6,16 @@ const pageController = {
   homePage: async function (req, res) {
     const members = await memberControllers.findAllMembers();
     res.render("home", {
-      members
+      members,
     });
   },
 
   schedule: async function (req, res) {
     res.render("schedule");
+  },
+
+  loginPage: async function (req, res) {
+    res.render("loginpage");
   },
 
   admin: async function (req, res) {

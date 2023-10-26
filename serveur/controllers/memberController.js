@@ -5,25 +5,27 @@ const memberControllers = {
     const name = req.body.name;
     const lastName = req.body.lastName;
     const role = req.body.role;
+
     const newMember = new Members({
       name: name,
       lastName: lastName,
-      role: role
-    })
-    const verifyIfExist = await Members.findOne(newMember.lastName);
-    if(verifyIfExist === lastName){
-      console.log("New Member already exist")
-      res.redirect("/admin"); // Redirige vers une page de liste de membres
-    } else if (verifyIfExist = false){
+      role: role,
+    });
+
     try {
-      await newMember.save();
-      console.log("New member added successfully!");
-      res.redirect("/admin"); // Redirige vers une page de liste de membres
+      const verifyIfExist = await Members.findOne({ lastName: lastName });
+      if (verifyIfExist) {
+        console.log("Le nouveau membre existe déjà");
+        res.redirect("/admin"); // Redirige vers une page de liste de membres
+      } else {
+        await newMember.save();
+        console.log("Nouveau membre ajouté avec succès!");
+        res.redirect("/admin"); // Redirige vers une page de liste de membres
+      }
     } catch (err) {
       console.log(err);
-      res.status(500).send("Error adding member");
+      res.status(500).send("Erreur lors de l'ajout du membre");
     }
-  }
   },
 
   findAllMembers: async (req, res) => {
