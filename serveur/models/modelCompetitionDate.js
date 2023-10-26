@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const Competition = mongoose.model("Competition", {
+const CompetitionDate = mongoose.model("CompetitionDate", {
   name: {
     type: String,
     required: true,
@@ -11,4 +11,4 @@ const Competition = mongoose.model("Competition", {
   },
 });
 
-module.exports = Competition;
+module.exports = CompetitionDate;

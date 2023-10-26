@@ -104,19 +104,6 @@ const calendarControl = {
         "Novembre",
         "Décembre",
       ];
-
-      // Création du message de la date actuelle
-      const weekdayHTML =
-        "<p>" +
-        dayNames[date.getDay()] +
-        " " +
-        date.getDate() +
-        " " +
-        monthNames[date.getMonth()] +
-        "</p>";
-
-      // Ajout du message à l'élément du calendrier
-      calendar.insertAdjacentHTML("beforeend", weekdayHTML);
     }
   },
 

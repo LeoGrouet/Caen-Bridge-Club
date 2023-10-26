@@ -34,15 +34,16 @@
       <form action="/delete-member/<%=member._id%>" method="POST">
         <div class="admin-members-delete-container">
           <label class="admin-div-label" for="member"><%=member.name%> <%=member.lastName%>:</label>
-        <button class="button-admin" type="submit" name="_id" value="<%=member._id%>"> <span class="button-decor"></span>
-          <div class="button-content">
-            <div class="button__icon">
-              <svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" width="24">
-                <image x="0" y="0" width="50" height="50" href="/img/BxMinusCircle.svg" />
-            </svg>
+          <button class="button-admin" type="submit" name="_id" value="<%=member._id%>"> <span class="button-decor"></span>
+            <div class="button-content">
+                <div class="button__icon">
+                  <svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" width="24">
+                    <image x="0" y="0" width="50" height="50" href="/img/BxMinusCircle.svg" />
+                  </svg>
+                </div>
+                <span class="button__text">Supprimer le membre</span>
             </div>
-            <span class="button__text">Supprimer le membre</span>
-        </div></button>
+          </button>
         </div>
       </form>
         <%}%>
@@ -69,11 +70,11 @@
           <div class="button__icon">
             <svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" width="24">
               <image x="0" y="0" width="50" height="50" href="/img/BxPlusCircle.svg" />
-          </svg>
+            </svg>
           </div>
           <span class="button__text">Ajouter un administrateur</span>
-      </div>
-    </button>
+        </div>
+      </button>
     </form>
   </div>
 
@@ -83,16 +84,16 @@
         <form action="/delete-admin/<%=admin._id%>" method="POST">
           <div class="admin-members-delete-container">
             <label class="admin-div-label" for="admin"><%=admin.email%>:</label>
-          <button class="button-admin" type="submit" name="_id" value="<%=admin._id%>"> <span class="button-decor"></span>
-            <div class="button-content">
-              <div class="button__icon">
-                <svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" width="24">
-                  <image x="0" y="0" width="50" height="50" href="/img/BxMinusCircle.svg" />
-              </svg>
+            <button class="button-admin" type="submit" name="_id" value="<%=admin._id%>"> <span class="button-decor"></span>
+              <div class="button-content">
+                  <div class="button__icon">
+                    <svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" width="24">
+                      <image x="0" y="0" width="50" height="50" href="/img/BxMinusCircle.svg" />
+                    </svg>
+                  </div>
+                <span class="button__text">Supprimer l'admin</span>
               </div>
-              <span class="button__text">Supprimer l'admin</span>
-          </div>
-        </button>
+            </button>
           </div>
         </form>
           <%}%>
@@ -100,5 +101,47 @@
   </div>
 </div>
 
+<div class="admin-div-add-competition">
+    <div class="admin-div-spe admin-div-add-competition">
+      <form method="POST" action="/competition/add">
+        <label class="admin-div-label" for="name">Name:</label>
+        <input class="admin-div-input" type="text" id="name" name="name" required>
+    
+        <label class="admin-div-label" for="date">Date:</label>
+        <input class="admin-div-input" type="date" id="date" name="date" required>
+
+        <button class="button-admin" type="submit">
+          <span class="button-decor"></span>
+            <div class="button-content">
+              <div class="button__icon">
+                <svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" width="24">
+                  <image x="0" y="0" width="50" height="50" href="/img/BxPlusCircle.svg" />
+                </svg>
+              </div>
+          <span class="button__text">Ajouter une competition</span>
+            </div>
+    </button>
+      </form>
+
+      <div class="admin-div-spe admin-div-supp-competition">
+        <%for (const competition of competitions){%>
+        <form action="/delete-competition/<%=competition._id%>" method="POST">
+          <div class="admin-competitions-delete-container">
+            <label class="admin-div-label" for="competition"><%=competition.name%> <%=competition.date.toISOString().split('T')[0]%></label>
+            <button class="button-admin" type="submit" name="_id" value="<%=competition._id%>"> <span class="button-decor"></span>
+              <div class="button-content">
+                  <div class="button__icon">
+                    <svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" width="24">
+                      <image x="0" y="0" width="50" height="50" href="/img/BxMinusCircle.svg" />
+                    </svg>
+                  </div>
+                  <span class="button__text">Supprimer la competition</span>
+              </div>
+            </button>
+          </div>
+        </form>
+          <%}%>
+      </div>
+</div>
   </body>
 </html>
