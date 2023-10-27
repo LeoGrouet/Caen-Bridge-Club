@@ -7,18 +7,9 @@ const pageController = {
   homePage: async function (req, res) {
     try {
       const members = await memberControllers.findAllMembers();
-      const nextComp = await competitionControllers.findNextCompetition();
 
-      // Créez une fonction de formatage de date
-      function formatNextCompetitionDate() {
-        const originalDate = new Date(nextComp.date); // Supposons que la date se trouve dans la propriété "date"
-        const options = { year: "numeric", month: "long", day: "numeric" };
-        return originalDate.toLocaleDateString("fr-FR", options);
-      }
-      console.log("lorem", formatNextCompetitionDate());
       res.render("home", {
         members,
-        nextCompetition: formatNextCompetitionDate(),
       });
     } catch (err) {
       console.error(err);
